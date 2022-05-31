@@ -297,3 +297,78 @@ Processing by V1::GreetingsController#index as */*
 Completed 200 OK in 6ms (Views: 1.0ms | ActiveRecord: 1.1ms | Allocations: 769)
 
 
+Started GET "/" for ::1 at 2022-06-01 02:57:42 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/lazycoder/.rvm/gems/ruby-3.1.2/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/lazycoder/.rvm/gems/ruby-3.1.2/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.0ms | Allocations: 26)
+Completed 200 OK in 2ms (Views: 1.9ms | Allocations: 219)
+
+
+Started GET "/greeting" for ::1 at 2022-06-01 02:57:52 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/greeting"):
+  
+Started GET "/v1/greeting" for ::1 at 2022-06-01 02:58:03 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/v1/greeting"):
+  
+Started GET "/v1/greetings" for ::1 at 2022-06-01 02:58:09 +0530
+Processing by V1::GreetingsController#index as HTML
+  Parameters: {"default"=>{"format"=>"json"}}
+  [1m[36mGreeting Load (2.4ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/greetings_controller.rb:3:in `index'
+Completed 200 OK in 49ms (Views: 1.1ms | ActiveRecord: 22.6ms | Allocations: 3019)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreeting Create (1.6ms)[0m  [1m[32mINSERT INTO "greetings" ("message", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["message", "Hello World"], ["created_at", "2022-05-31 21:30:09.729744"], ["updated_at", "2022-05-31 21:30:09.729744"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreeting Create (0.5ms)[0m  [1m[32mINSERT INTO "greetings" ("message", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["message", "Hello World"], ["created_at", "2022-05-31 21:30:09.739242"], ["updated_at", "2022-05-31 21:30:09.739242"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreeting Create (0.5ms)[0m  [1m[32mINSERT INTO "greetings" ("message", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["message", "Hello World"], ["created_at", "2022-05-31 21:30:09.745488"], ["updated_at", "2022-05-31 21:30:09.745488"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreeting Create (0.4ms)[0m  [1m[32mINSERT INTO "greetings" ("message", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["message", "Hello World"], ["created_at", "2022-05-31 21:30:09.751687"], ["updated_at", "2022-05-31 21:30:09.751687"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreeting Create (0.4ms)[0m  [1m[32mINSERT INTO "greetings" ("message", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["message", "Hello World"], ["created_at", "2022-05-31 21:30:09.758212"], ["updated_at", "2022-05-31 21:30:09.758212"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/v1/greetings" for ::1 at 2022-06-01 03:00:25 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by V1::GreetingsController#index as HTML
+  Parameters: {"default"=>{"format"=>"json"}}
+  [1m[36mGreeting Load (1.4ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/greetings_controller.rb:3:in `index'
+Completed 200 OK in 30ms (Views: 1.5ms | ActiveRecord: 6.5ms | Allocations: 7470)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreeting Create (0.9ms)[0m  [1m[32mINSERT INTO "greetings" ("message", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["message", "Hello World"], ["created_at", "2022-05-31 21:32:06.154732"], ["updated_at", "2022-05-31 21:32:06.154732"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreeting Create (0.5ms)[0m  [1m[32mINSERT INTO "greetings" ("message", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["message", "Hello Microverse"], ["created_at", "2022-05-31 21:32:06.164457"], ["updated_at", "2022-05-31 21:32:06.164457"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreeting Create (0.5ms)[0m  [1m[32mINSERT INTO "greetings" ("message", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["message", "Hello Universe"], ["created_at", "2022-05-31 21:32:06.172521"], ["updated_at", "2022-05-31 21:32:06.172521"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreeting Create (0.8ms)[0m  [1m[32mINSERT INTO "greetings" ("message", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["message", "Hello star"], ["created_at", "2022-05-31 21:32:06.179995"], ["updated_at", "2022-05-31 21:32:06.179995"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreeting Create (0.7ms)[0m  [1m[32mINSERT INTO "greetings" ("message", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["message", "Hello student"], ["created_at", "2022-05-31 21:32:06.187629"], ["updated_at", "2022-05-31 21:32:06.187629"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/v1/greetings" for ::1 at 2022-06-01 03:02:17 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by V1::GreetingsController#index as HTML
+  Parameters: {"default"=>{"format"=>"json"}}
+  [1m[36mGreeting Load (1.2ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/v1/greetings_controller.rb:3:in `index'
+Completed 200 OK in 29ms (Views: 1.0ms | ActiveRecord: 7.4ms | Allocations: 7470)
+
+
+  [1m[36mGreeting Load (1.0ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings"[0m
