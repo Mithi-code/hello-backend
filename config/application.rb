@@ -6,7 +6,7 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module HelloRailsBackEnd
+module ProjectNameHere
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
@@ -19,12 +19,9 @@ module HelloRailsBackEnd
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
-    # see gem page for more examples
-config.middleware.insert_before 0, Rack::Cors do
-  allow do
-    origins /\Ahttp:\/\/localhost:\d+\z/
-    resource '*', headers: :any, methods: :any
-  end
-end
+    # Only loads a smaller set of middleware suitable for API only apps.
+    # Middleware like session, flash, cookies can be added back manually.
+    # Skip views, helpers and assets when generating a new resource.
+    config.api_only = true
   end
 end
